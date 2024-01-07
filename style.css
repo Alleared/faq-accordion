@@ -1,0 +1,109 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS VARIABLES */
+:root {
+  /* -------- COLORS ---------- */
+  --WHITE: hsl(0, 0%, 100%);
+  --LIGHT-PINK: hsl(275, 100%, 97%);
+  --GRAYISH-PURPLE: hsl(292, 16%, 49%);
+  --DARK-PURPLE: hsl(292, 42%, 14%);
+
+
+  /* -------- FONT ----------- */
+  --FONT-FAMILY: 'Work Sans', sans-serif;
+  --FONT-SIZE: 1rem;
+}
+
+
+body {
+  font: var(--FONT-SIZE) var(--FONT-FAMILY);
+  background: var(--LIGHT-PINK) url(assets/images/background-pattern-desktop.svg) repeat-x;
+}
+
+
+.faq-header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+main {
+  display: flex;
+  margin: 10rem 0 2rem 0;
+  justify-content: center;
+}
+
+.main-container {
+  background-color: var(--WHITE);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  width: 550px;
+  border-radius: 20px;
+}
+
+
+details {
+  border-bottom: 1px solid hsla(293, 16%, 49%, 0.3);
+  padding: 1rem 0;
+  
+}
+
+details p {
+  padding: 1rem 0;
+  color: var(--GRAYISH-PURPLE);
+}
+
+summary {
+  font-weight: 700;
+  color: black;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+summary::after {
+  content: url(assets/images/icon-plus.svg);
+}
+
+details[open] > summary::after {
+  content: url(assets/images/icon-minus.svg);
+}
+
+/* HOVER STYLES */
+summary:hover {
+  color: purple;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  body {
+    background: var(--LIGHT-PINK) url(assets/images/background-pattern-mobile.svg) repeat-x;
+  }
+
+  main {
+    margin: 5rem 0 2rem 0;
+  }
+
+  .main-container {
+    max-width: 450px;
+  }
+}
